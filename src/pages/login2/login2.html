@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>L O G I N</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card center>
+    <ion-card-header>
+      Datos del usuarios
+    </ion-card-header>
+    <form #loginForm="ngForm" (ngSubmit)="Login()" autocomplete="off">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input placeholder="Correo" name="Correo" id="Correo" type="email" required [(ngModel)]="data.Correo" #email></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Clave" name="Clave" id="Clave" type="password" required [(ngModel)]="data.Clave"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          <button ion-button class="submit-btn" full type="submit" >Login</button>
+          
+          
+          <b>{{mesagge}}</b>
+         
+         
+         
+        </ion-col>
+      </ion-row>
+    </form>
+    <a  (click)="registro()">Registro</a>
+    <!-- 
+    <div>
+    <button ion-button (click)="registro()" class="button button-block button-positive">Registrate</button> 
+  </div>-->
+  </ion-card>   
+</ion-content>

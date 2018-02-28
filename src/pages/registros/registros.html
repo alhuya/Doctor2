@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>
+     Registro
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+     <form #loginForm="ngForm" (ngSubmit)="cargarUsuarios()" autocomplete="off">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-input placeholder="Nombre" name="Nombre" id="Nombre" type="text" required [(ngModel)]="data.Nombre" #Nombrel></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Apellido Paterno" name="Ap_paterno" id="Ap_paterno" type="text" required [(ngModel)]="data.Ap_paterno" #Apellido></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Apellido Materno" name="Ap_materno" id="Ap_materno" type="text" required [(ngModel)]="data.Ap_materno" #Apellido2></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Edad"  min="1" max="99" name="Edad" id="Edad" type="number" required [(ngModel)]="data.Edad" #Edad></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Genero</ion-label>
+              <ion-select  name="Genero" id="Genero" type="text" required [(ngModel)]="data.Genero" #Genero>
+                  <ion-option value="Femenino">Femenino</ion-option>
+                  <ion-option value="Masculino">Maculino</ion-option>
+                </ion-select>
+            
+          </ion-item> 
+          <ion-item>
+            <ion-input placeholder="Alergia" name="Alergia" id="Alergia" type="text" required [(ngModel)]="data.Alergia" #Alergia></ion-input>
+          </ion-item> 
+          <ion-item>
+              <ion-label>Tipo de sangre</ion-label>
+              <ion-select name="Tipo_sangre" id="Tipo_sangre" type="text" required [(ngModel)]="data.Tipo_sangre" #Tipo>
+                  <ion-option value="O Positivo">O positivo</ion-option>
+                  <ion-option value="O Negativo">O Negativo</ion-option>
+                  <ion-option value="A Positivo">A positivo</ion-option>
+                  <ion-option value="A Negativo">A Negativo</ion-option>
+                  <ion-option value="B Positivo">B positivo</ion-option>
+                  <ion-option value="B Negativo">B Negativo</ion-option>
+                  <ion-option value="AB Positivo">AB positivo</ion-option>
+                  <ion-option value="AB Negativo">AB Negativo</ion-option>
+                  
+                </ion-select>            
+          </ion-item>                
+          <ion-item>
+            <ion-input placeholder="Correo" name="Correo" id="Correo" type="text" required [(ngModel)]="data.Correo" #email></ion-input>
+          </ion-item>
+          <div> <p>La contraseña debe de tener minimo 8 caracteres,1 letra minuscula,1 letra mayuscula y 1 caracter numerico.</p></div>         
+          <ion-item>            
+            <ion-input  placeholder="Contraseña" name="Clave" id="password" type="password" required [(ngModel)]="data.Clave"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Confirmar Contraseña" name="Clave2" id="password2" type="password" required [(ngModel)]="data.Clave2"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        <button ion-button class="submit-btn" full type="submit" >Guardar</button>
+       
+        <b>{{mesagge}}</b>
+        <b>{{data.response}}</b>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

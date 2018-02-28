@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>
+        AGENDAR CITA
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+     
+    <form #loginForm="ngForm" (ngSubmit)="AgendarCita()" autocomplete="off">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+              <label>Fecha</label>
+            <ion-item>
+              <ion-input placeholder="Fecha" name="Fecha" id="Fecha" type="date" required [(ngModel)]="data.Fecha" #date></ion-input>
+            </ion-item>
+            <label>Hora de consulta</label>
+            <ion-item>              
+                <ion-input value='{{hora}}'  readonly ></ion-input>
+            </ion-item>
+            <label>Nombre del paciente</label>
+            <ion-item>                
+                <ion-input value='{{nombre_us}}'  readonly ></ion-input>
+            </ion-item>
+            <label>Turno</label>
+            <ion-item>               
+                <ion-input value='{{turno}}'  readonly ></ion-input>
+            </ion-item>
+            <label>Nombre del Doctor</label>
+            <ion-item>               
+                <ion-input value='{{nombre_admin}}'  readonly ></ion-input>
+            </ion-item>
+            <label>Especialidad</label>
+            <ion-item>                
+                <ion-input value='{{especialidad}}'  readonly ></ion-input>
+            </ion-item>           
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+       
+          <button ion-button class="submit-btn" full type="submit" >Guardar</button>
+          <button ion-button class="submit-btn" full type="submit" (click)="regresar()" >Regresar</button>
+          
+        
+   
+   
+   <b>{{data.response}}</b>
+  
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>

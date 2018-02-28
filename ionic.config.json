@@ -1,0 +1,8 @@
+{
+  "name": "citas_usuarios",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
